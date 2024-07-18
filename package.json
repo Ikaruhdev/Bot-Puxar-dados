@@ -1,0 +1,31 @@
+{
+    "name": "nodejs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@discordjs/voice": "^0.16.0",
+        "@types/node": "^18.0.6",
+        "axios": "^1.7.2",
+        "cheerio": "^1.0.0-rc.12",
+        "child_process": "^1.0.2",
+        "colors": "^1.4.0",
+        "curl": "^0.1.4",
+        "discord-rpc": "^4.0.1",
+        "discord.js": "^14.15.3",
+        "discordnitro": "^0.1.6",
+        "figlet": "^1.7.0",
+        "fs": "^0.0.1-security",
+        "moment": "^2.29.4",
+        "node-fetch": "^3.3.2",
+        "ora": "^8.0.1",
+        "os": "^0.1.2",
+        "path": "^0.12.7",
+        "pyinstaller": "^0.0.1",
+        "random-useragent": "^0.5.0",
+        "readline-sync": "^1.4.10"
+    }
+}
