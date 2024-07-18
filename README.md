@@ -26,108 +26,24 @@ Este bot do Discord utiliza a API do SP-NI para puxar dados de uma pessoa pelo C
 
 ## Configuração
 
-1. **Clone o repositório:**
+1. **Como abrir**
+   Primeiramente tenha os seguintes modulos instalados, instale eles desta maneira:
+npm i discord.js
+npm i axios
 
-   ```bash
-   git clone https://github.com/seu-usuario/sp-ni-discord-bot.git
-   cd sp-ni-discord-bot
-Instale as dependências:
+Após ter os modulos instalados configure na seção
+config.js
+Coloque token do bot
+prefixo e status
 
-bash
-Copiar código
-npm install
-Crie um arquivo .env com as seguintes variáveis de ambiente:
+após isso edite as duas linhas
 
-makefile
-Copiar código
-TOKEN=seu-token-do-discord
-SP_NI_API_KEY=sua-chave-da-api-sp-ni
-Código do Bot
-Aqui está um exemplo básico do código do bot (bot.js):
+   const email = 'marciahev@gmail.com';
+    const password = 'marciacosta1';
+    * Ai já tem um login, caso não funcione este login entre neste servidor e me chame https://discord.gg/nWEKmqNgcS *
 
-javascript
-Copiar código
-require('dotenv').config();
-const { Client, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-const cpfCommand = require('./cpf');
+Depois disso abra o start e provavalemente ele vai iniciar o bot ai você digita em um canal do discord em que o bot se encontra
+(seuprefixo)cpf (cpf da vitima)
 
-client.once('ready', () => {
-    console.log('Bot está online!');
-});
-
-client.on('messageCreate', message => {
-    if (message.content.startsWith('!cpf')) {
-        const cpf = message.content.split(' ')[1];
-        cpfCommand(cpf, message);
-    }
-});
-
-client.login(process.env.TOKEN);
-Como Rodar o Bot
-Você pode inicializar o bot de duas maneiras:
-
-Método 1: Iniciando diretamente pelo Node.js
-Use o comando abaixo para iniciar o bot:
-
-bash
-Copiar código
-node bot.js
-Método 2: Criando um arquivo .bat (Windows)
-Crie um arquivo chamado start.bat.
-
-Adicione o seguinte conteúdo ao arquivo:
-
-batch
-Copiar código
-@echo off
-node bot.js
-Salve o arquivo e dê um duplo clique nele para iniciar o bot.
-
-Comando cpf.js
-Aqui está um exemplo básico do código do comando cpf.js que utiliza a API do SP-NI:
-
-javascript
-Copiar código
-const fetch = require('node-fetch');
-
-module.exports = async (cpf, message) => {
-    const response = await fetch(`https://api.sp-ni.com/v1/cpf/${cpf}`, {
-        headers: {
-            'Authorization': `Bearer ${process.env.SP_NI_API_KEY}`
-        }
-    });
-
-    if (response.ok) {
-        const data = await response.json();
-        message.channel.send(`Nome: ${data.name}, Idade: ${data.age}`);
-    } else {
-        message.channel.send('Não foi possível encontrar os dados para o CPF fornecido.');
-    }
-};
-Recursos Adicionais
-Para mais informações, consulte os seguintes recursos:
-
-Documentação do Discord.js
-Portal de Desenvolvedores do Discord
-Documentação da API do SP-NI
-Contribuições
-Contribuições são bem-vindas! Por favor, abra um issue ou envie um pull request.
-
-Licença
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-markdown
-Copiar código
-
-### Explicações Adicionais
-
-- **Descrição:** Uma breve descrição sobre o que o bot faz.
-- **Pré-requisitos:** Lista de itens necessários para configurar e rodar o bot.
-- **Configuração:** Instruções detalhadas sobre como configurar o ambiente e as variáveis de ambiente necessárias.
-- **Código do Bot:** Exemplo do arquivo principal `bot.js` que inicializa o bot e define seu comportamento.
-- **Como Rodar o Bot:** Instruções sobre como iniciar o bot, incluindo métodos alternativos para sistemas Windows.
-- **Comando `cpf.js`:** Exemplo do arquivo de comando `cpf.js` que faz a chamada à API do SP-NI.
-- **Recursos Adicionais:** Links úteis para documentações relevantes.
-- **Contribuições:** Informações sobre como contribuir para o projeto.
-- **Licença:** Tipo de licença do projeto.
+Qualquer dúvida entre no discord  https://discord.gg/nWEKmqNgcS
+   
